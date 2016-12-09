@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class The_lead_Game {
 
 	public static void main(String[] args) {
-		System.out.println("Let's play the game!!\n");
+//		System.out.println("Let's play the game!!\n");
 		Scanner sc=new Scanner(System.in);
 		if(sc.hasNextInt()){
 			int No_of_Rounds=sc.nextInt();
@@ -30,10 +30,11 @@ public class The_lead_Game {
 					Winner=Each_Round[i][3];
 				}
 			}
-			for(int i=0;i<No_of_Rounds;i++){
-				System.out.println("Round "+(i+1)+": "+Each_Round[i][0]+" - "+Each_Round[i][1]+" - "+Each_Round[i][2]+" - "+Each_Round[i][3]);
-			}
-			System.out.println("Winner is # "+Winner+" by "+Max_Diff+" margins!");
+//			for(int i=0;i<No_of_Rounds;i++){
+//				System.out.println("Round "+(i+1)+": "+Each_Round[i][0]+" - "+Each_Round[i][1]+" - "+Each_Round[i][2]+" - "+Each_Round[i][3]);
+//			}
+//			System.out.println("Winner is # "+Winner+" by "+Max_Diff+" margins!");
+			System.out.println(Winner+Max_Diff);
 		}
 	}
 }
