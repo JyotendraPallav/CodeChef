@@ -1,8 +1,16 @@
+import java.util.Scanner;
 
-public class Cupcake {
+class Cupcake {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		try{
+			System.out.println("How many test case are there: ");
+			int TestCases=sc.nextInt();
+			int cupcakes[]=new int[5];
+		}finally{
+			sc.close();
+		}
 
 	}
 
