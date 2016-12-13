@@ -23,22 +23,10 @@ class Cupcake {
 	}
 
 	static int package_size(int tot_cc){
-		int package_size=0;
-		int Temp_size=0;
-		int Diff=0;
-		int i=1;
-		do{
-			Temp_size=tot_cc%(tot_cc-i);
-			Diff=Temp_size-package_size;
-			if(Temp_size>package_size) {package_size=Temp_size;}
-			//System.out.println(Temp_size);
-			i=i+1;
-		}while(Diff>0);
-		if(package_size==0){
-			package_size=tot_cc;
-		}else{
-			package_size=tot_cc-package_size;
-		}
+		int package_size;
+		if(tot_cc%2==0){
+			package_size=(tot_cc/2)+1;
+		}else package_size=(tot_cc+1)/2;
 		return package_size;
 	}
 	
