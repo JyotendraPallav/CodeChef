@@ -20,7 +20,7 @@ class SUMTRIAN {
 						}
 					}
 					int[] Max_Path=new int[No_of_cases];
-					Max_Path[i]=Find_Path(Triangle);
+					Max_Path[i]=Find_Path(triangle);
 				}
 				
 			}
@@ -30,4 +30,14 @@ class SUMTRIAN {
 
 	}
 
+	static int Find_Path(int[][] SumTrian){
+		for(int row=0; row<SumTrian.length;row++){
+			for(int col=0;col<=row;col++){
+				System.out.println(SumTrian[row][col]);
+			}
+			System.out.println("\n");
+		}
+		int path_value=0;
+		return path_value;
+	}
 }
