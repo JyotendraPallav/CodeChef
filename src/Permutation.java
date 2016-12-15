@@ -15,9 +15,11 @@ class Permutation {
 						perm.add(sc.nextInt());
 					}
 					results.add(find_truth(perm));
-					System.out.println(results);
 					Permu_len=sc.nextInt();
-				};	
+				};
+				for(int i=0;i<results.size();i++){
+					System.out.println(results.get(i));
+				}
 			}
 		}finally{
 			sc.close();
@@ -26,7 +28,14 @@ class Permutation {
 	}
 	
 	static String find_truth(List<Integer> Arr){
-		String verdict=Integer.toString(Arr.indexOf(1));
+		String verdict="";
+		for(int i=0;i<Arr.size();i++){
+			if(Arr.indexOf(i)!=Arr.get(i)){
+				verdict="not ambiguous";
+			}else if(i==Arr.size()-1){
+				verdict="ambiguous";
+				}
+			}
 		return verdict;
 	}
 
