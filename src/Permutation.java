@@ -30,7 +30,7 @@ class Permutation {
 	static String find_truth(List<Integer> Arr){
 		String verdict="";
 		for(int i=0;i<Arr.size();i++){
-			if(Arr.indexOf(i)!=Arr.get(i)){
+			if(Arr.indexOf(i+1)+1!=Arr.get(i)){
 				verdict="not ambiguous";
 			}else if(i==Arr.size()-1){
 				verdict="ambiguous";
