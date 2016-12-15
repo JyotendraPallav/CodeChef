@@ -5,21 +5,19 @@ class Permutation {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		try{
+			System.out.println("Length of permutation?:");
 			if(sc.hasNextInt()){
-				System.out.println("Length of permutation?:");
 				int Permu_len=sc.nextInt();
-				int iter=0;
 				List<String> results=new ArrayList<String>();
 				while(Permu_len>0){
-					int[] perm = new int[Permu_len];
+					List<Integer> perm=new ArrayList<Integer>();
 					for(int j=0; j<Permu_len;j++){
-						perm[j]=sc.nextInt();
+						perm.add(sc.nextInt());
 					}
-					Permu_len=sc.nextInt();
 					results.add(find_truth(perm));
-					iter=iter+1;
-				};
-				
+					System.out.println(results);
+					Permu_len=sc.nextInt();
+				};	
 			}
 		}finally{
 			sc.close();
@@ -27,14 +25,8 @@ class Permutation {
 
 	}
 	
-	static String find_truth(int[] Arr){
-		String verdict="";
-		Int tot_len=Arr.length;
-		while(tot_len>0){
-			for(int i=1;i<=tot_len;i++){
-				if(Arr[i])
-			}
-		}
+	static String find_truth(List<Integer> Arr){
+		String verdict=Integer.toString(Arr.indexOf(1));
 		return verdict;
 	}
 
