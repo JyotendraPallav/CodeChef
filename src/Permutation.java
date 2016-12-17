@@ -8,18 +8,21 @@ class Permutation {
 			System.out.println("Length of permutation?:");
 			if(sc.hasNextInt()){
 				int Permu_len=sc.nextInt();
-				List<String> results=new ArrayList<String>();
 				while(Permu_len>0){
-					List<Integer> perm=new ArrayList<Integer>();
+					int[] perm=new int[Permu_len];
+					int[] Inv=new int[Permu_len];
 					for(int j=0; j<Permu_len;j++){
-						perm.add(sc.nextInt());
+						perm[j]=sc.nextInt();
+						Inv[perm[j]-1]=j+1;
 					}
-					results.add(find_truth(perm));
+					if(perm==Inv){
+						System.out.println("Checked");
+					}else{
+						System.out.println(Inv);
+					}
 					Permu_len=sc.nextInt();
 				};
-				for(int i=0;i<results.size();i++){
-					System.out.println(results.get(i));
-				}
+				
 			}
 		}finally{
 			sc.close();
@@ -32,6 +35,7 @@ class Permutation {
 		for(int i=0;i<Arr.size();i++){
 			if(Arr.indexOf(i+1)+1!=Arr.get(i)){
 				verdict="not ambiguous";
+				break;
 			}else if(i==Arr.size()-1){
 				verdict="ambiguous";
 				}
