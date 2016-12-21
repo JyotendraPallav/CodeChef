@@ -28,10 +28,13 @@ class Ciel_Receipt {
 	}
 	static int cal_Menu(int amount, List<Integer> Menu){
 		int tot_Menus=0;
-		tot_Menus=Menu.stream()
-				.filter(item -> item==amount)
-				.findAny()
-				.orElse(100000);
-;		return tot_Menus;
+		while(tot_Menus==0){
+			tot_Menus=Menu.stream()
+					.filter(item -> item==amount)
+					.findAny()
+					.orElse(0);
+			tot_Menus+=amount/
+		}
+		}else{return 1;}		
 	}
 }
