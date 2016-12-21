@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 class Ciel_Receipt {
 
@@ -18,7 +19,7 @@ class Ciel_Receipt {
 					Num_of_Menus.add(cal_Menu(amount,Menu_items));
 				}
 				
-				Menu_items.forEach(System.out::println);
+				//Menu_items.forEach(System.out::println);
 				Num_of_Menus.forEach(System.out::println);
 			}
 			
@@ -28,13 +29,18 @@ class Ciel_Receipt {
 	}
 	static int cal_Menu(int amount, List<Integer> Menu){
 		int tot_Menus=0;
-		while(tot_Menus==0){
-			tot_Menus=Menu.stream()
-					.filter(item -> item==amount)
-					.findAny()
-					.orElse(0);
-			tot_Menus+=amount/
+		int x=amount;
+		
+		List <Integer> filtered =Menu.stream()
+				.filter(value -> value<=x)
+				.collect(Collectors.toList());
+		tot_Menus=(int)x/Collections.max(filtered);
+		System.out.println("Amount: "+ x + " Menu: "+ tot_Menus + " Max:"+ Collections.max(filtered));
+
+		if((double)x/Collections.max(filtered)>1.0 && x%Collections.max(filtered)!=0 ){
+			amount=x % Collections.max(filtered);
+			tot_Menus+=cal_Menu(amount,filtered);
 		}
-		}else{return 1;}		
+		return tot_Menus;
 	}
 }
