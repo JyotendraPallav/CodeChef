@@ -35,7 +35,7 @@ class Ciel_Receipt {
 				.filter(value -> value<=x)
 				.collect(Collectors.toList());
 		tot_Menus=(int)x/Collections.max(filtered);
-		System.out.println("Amount: "+ x + " Menu: "+ tot_Menus + " Max:"+ Collections.max(filtered));
+		//System.out.println("Amount: "+ x + " Menu: "+ tot_Menus + " Max:"+ Collections.max(filtered));
 
 		if((double)x/Collections.max(filtered)>1.0 && x%Collections.max(filtered)!=0 ){
 			amount=x % Collections.max(filtered);
