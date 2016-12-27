@@ -13,7 +13,7 @@ public class Transform {
 					Expr.add(sc.next());
 					Expr_Converted.add(Transform_exp(Expr.get(i)));
 				}
-				System.out.println(Expr);
+				//System.out.println(Expr);
 				Expr_Converted.forEach(System.out::println);
 			}
 		}finally{
@@ -33,25 +33,25 @@ public class Transform {
 		String Temp="";
 		while(litr.hasNext()){
 			Temp=litr.next();
-			System.out.println(Temp);
+			//System.out.println(Temp);
 			if(Temp.equals("(")){
 				start_index=litr.nextIndex();
-				System.out.println("Start entered: "+start_index);
+				//System.out.println("Start entered: "+start_index);
 			}
 			if(Temp.equals(")")){
 				End_index=litr.nextIndex();
-				System.out.println("End entered: "+End_index);
-				Final.add(i,Exp.get(start_index));
-				Final.add(i+1,Exp.get(End_index-2));
-				Final.add(i+2,Exp.get(End_index-3));
-				i=i+3;
+				//System.out.println("End entered: "+End_index);
+				Final.add(0,Exp.get(start_index));
+				Final.add(1,Exp.get(End_index-2));
+				Final.add(2,Exp.get(End_index-3));
 				Exp.subList(start_index-1, End_index).clear();
 				converted=String.join("", Final);
+				Final.clear();
 				Exp.add(start_index-1, converted);
 				//System.out.println(Final);
-				System.out.println(converted);
+				//System.out.println(converted);
 				litr=Exp.listIterator();
-				System.out.println(Exp);
+				//System.out.println(Exp);
 			}
 		}
 		return converted;
