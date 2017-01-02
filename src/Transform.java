@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Transform {
+class Transform {
 
 	public static void main(String[] args){
 		Scanner sc=new Scanner(System.in);
@@ -29,7 +29,6 @@ public class Transform {
 		List<String> Final=new ArrayList<String>();
 		int start_index=0;
 		int End_index=0;
-		int i=0;
 		String Temp="";
 		while(litr.hasNext()){
 			Temp=litr.next();
